@@ -8,9 +8,9 @@
 using namespace std;
 
 class Domain {
-    // разработайте класс домена
+    // СЂР°Р·СЂР°Р±РѕС‚Р°Р№С‚Рµ РєР»Р°СЃСЃ РґРѕРјРµРЅР°
 public:
-    // конструктор должен позволять конструирование из string, с сигнатурой определитесь сами
+    // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґРѕР»Р¶РµРЅ РїРѕР·РІРѕР»СЏС‚СЊ РєРѕРЅСЃС‚СЂСѓРёСЂРѕРІР°РЅРёРµ РёР· string, СЃ СЃРёРіРЅР°С‚СѓСЂРѕР№ РѕРїСЂРµРґРµР»РёС‚РµСЃСЊ СЃР°РјРё
     Domain(string& domain)
         :domain_(domain)
     {
@@ -18,11 +18,11 @@ public:
         domain_.push_back('.');
     }
 
-    // разработайте operator==
+    // СЂР°Р·СЂР°Р±РѕС‚Р°Р№С‚Рµ operator==
     bool operator==(const Domain& other) {
         return domain_ == other.domain_;
     }
-    // разработайте метод IsSubdomain, принимающий другой домен и возвращающий true, если this его поддомен
+    // СЂР°Р·СЂР°Р±РѕС‚Р°Р№С‚Рµ РјРµС‚РѕРґ IsSubdomain, РїСЂРёРЅРёРјР°СЋС‰РёР№ РґСЂСѓРіРѕР№ РґРѕРјРµРЅ Рё РІРѕР·РІСЂР°С‰Р°СЋС‰РёР№ true, РµСЃР»Рё this РµРіРѕ РїРѕРґРґРѕРјРµРЅ
     bool IsSubdomain(const Domain& other) const{
         if (domain_.size() < other.domain_.size()) {
             return false;
@@ -44,7 +44,7 @@ private:
 
 class DomainChecker {
 public:
-    // конструктор должен принимать список запрещённых доменов через пару итераторов
+    // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґРѕР»Р¶РµРЅ РїСЂРёРЅРёРјР°С‚СЊ СЃРїРёСЃРѕРє Р·Р°РїСЂРµС‰С‘РЅРЅС‹С… РґРѕРјРµРЅРѕРІ С‡РµСЂРµР· РїР°СЂСѓ РёС‚РµСЂР°С‚РѕСЂРѕРІ
     template <typename Iterator>
     DomainChecker( Iterator first, Iterator second) 
         :forbidden_domains_(first, second)
@@ -59,7 +59,7 @@ public:
     
     }
 
-    // разработайте метод IsForbidden, возвращающий true, если домен запрещён
+    // СЂР°Р·СЂР°Р±РѕС‚Р°Р№С‚Рµ РјРµС‚РѕРґ IsForbidden, РІРѕР·РІСЂР°С‰Р°СЋС‰РёР№ true, РµСЃР»Рё РґРѕРјРµРЅ Р·Р°РїСЂРµС‰С‘РЅ
 
     bool IsForbidden(const Domain& domain) {
 
@@ -77,7 +77,7 @@ private:
     vector<Domain> forbidden_domains_;
 };
 
-// разработайте функцию ReadDomains, читающую заданное количество доменов из стандартного входа
+// СЂР°Р·СЂР°Р±РѕС‚Р°Р№С‚Рµ С„СѓРЅРєС†РёСЋ ReadDomains, С‡РёС‚Р°СЋС‰СѓСЋ Р·Р°РґР°РЅРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РґРѕРјРµРЅРѕРІ РёР· СЃС‚Р°РЅРґР°СЂС‚РЅРѕРіРѕ РІС…РѕРґР°
 template <typename Number>
 vector<Domain> ReadDomains(istream& input, Number num) {
     vector<Domain> result;
