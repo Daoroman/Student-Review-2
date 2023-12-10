@@ -11,7 +11,7 @@ class Domain {
     // разработайте класс домена
 public:
     // конструктор должен позволять конструирование из string, с сигнатурой определитесь сами
-    Domain(string& domain)
+    Domain(const string& domain)
         :domain_(domain)
     {
         reverse(domain_.begin(), domain_.end());
@@ -28,10 +28,8 @@ public:
             return false;
         }
         auto mutch = std::mismatch(other.domain_.begin(), other.domain_.end(), domain_.begin());
-        if (mutch.first == other.domain_.end()) {
-            return true;
-        }
-        return false;
+
+        return mutch.first == other.domain_.end();
     }
 
     string GetDomain() const {
